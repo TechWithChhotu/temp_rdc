@@ -1,0 +1,476 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>MySQL Connection</title>
+  </head>
+  <body>
+    <button id="connectButton">Connect to MySQL</button>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadhin College - Online</title>
+    <!--============Facicon=============-->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <!--============CSS file=============-->
+    <link rel="stylesheet" href="./style.css" />
+    <!--======================Google Fonts=====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aladin&family=Mr+De+Haviland&family=Nunito&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!--======================Font awesome cdn=====================-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ===================aos css cdn=================== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- ===================
+       aos css cdn
+    ===================== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="firstHeader cWhite">
+      <marquee
+        width="100%"
+        direction="left"
+        height="100px"
+        id="Movable-Text"
+        scrollamount="15"
+      >
+        Welcome to Ramadhin College, Sheikhpura
+      </marquee>
+    </header>
+    <!-- <marquee behavior="scroll" direction="up" scrollamount="1">Slow Scrolling</marquee> -->
+
+    <section class="secondHeader bcWhite cBlack flex-ja">
+      <figure class="secondHeaderRDC">
+        <img
+          src="./Assets/RDC-Logo.png"
+          alt="RDC"
+          class="secondHeaderLogo RDC"
+        />
+      </figure>
+
+      <div class="secondHeaderRDC-Caption cBlack">
+        <h2>Ramadhin College, Sheikhpura</h2>
+        <p>(A Constituent Unit of Munger University, Munger)</p>
+        <p>Ramadhin College, Sheikhpura (Bihar) - 811105</p>
+      </div>
+
+      <figure>
+        <img src="./Assets/MU-Logo.png" alt="dffgd" class="secondHeaderLogo" />
+      </figure>
+    </section>
+
+    <main>
+      <section class="Home-navbar">
+        <nav class="navbar">
+          <ul class="unorderListNav flex-ja">
+            <li class="navListItem">
+              <a href="#Home"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li class="navListItem">
+              <a href="/"
+                ><i class="fa-solid fa-eject"></i> About Us
+                <ul class="subFolder About">
+                  <li class="subFolderNav AboutItem">
+                    <a href="/">About College</a>
+                  </li>
+                  <li class="subFolderNav AboutItem">
+                    <a href="/">About University</a>
+                  </li>
+                  <li class="subFolderNav AboutItem">
+                    <a href="/">Vision & Mission</a>
+                  </li>
+                  <li class="subFolderNav AboutItem">
+                    <a href="/">Achievements</a>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="navListItem">
+              <a href="/"><i class="fa-solid fa-graduation-cap"></i> Courses</a>
+              <ul class="subFolder Courses">
+                <li class="subFolderNav CourseItem"><a href="/">BA</a></li>
+                <li class="subFolderNav CourseItem"><a href="/">BSC</a></li>
+                <li class="subFolderNav CourseItem"><a href="/">BCA</a></li>
+                <li class="subFolderNav CourseItem"><a href="/">BBA</a></li>
+              </ul>
+            </li>
+
+            <li class="navListItem">
+              <a href="/"
+                ><i class="fa-solid fa-ticket"></i> Admission
+                <ul class="subFolder Admission">
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Online Admission</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Offline Admission</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem" id="connectButton">
+                    <a href="#insertAnyResponseContainer"> admission records</a>
+                  </li>
+                </ul>
+              </a>
+            </li>
+            <li class="navListItem">
+              <a href="/"
+                ><i class="fa-solid fa-headset"></i> Student Support
+                <ul class="subFolder Admission">
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Rules & Regulations</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Admission Process</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">any complaint</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem"><a href="/"></a></li>
+                </ul>
+              </a>
+            </li>
+            <li class="navListItem">
+              <a href="/"
+                >Facilities
+                <ul class="subFolder Admission">
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Hostel</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Sports Ground</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">Mini Library</a>
+                  </li>
+                  <li class="subFolderNav AdmissionItem">
+                    <a href="/">free coaching</a>
+                  </li>
+                </ul>
+              </a>
+            </li>
+            <li class="navListItem">
+              <a href="/"
+                ><i class="fa-regular fa-address-book"></i> Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <!--======================Hom Section=====================-->
+
+      <div class="Sliders">
+        <div class="SliderImage">
+          <img class="SliderImageItem" src="./SlidersImage/1.png" alt="1.png" />
+          <img class="SliderImageItem" src="./SlidersImage/2.png" alt="2.png" />
+          <img class="SliderImageItem" src="./SlidersImage/3.png" alt="1.png" />
+        </div>
+      </div>
+
+      <div id="insertAnyResponseContainer">
+        <table id="insertAnyResponse" bordercolor="white">
+          <tr>
+            <th>Courses</th>
+            <th>Session</th>
+            <th>Number of Students</th>
+            <th>Boys</th>
+            <th>Girls</th>
+          </tr>
+        </table>
+      </div>
+
+      <section class="AboutCollege">
+        <h2 class="SectionHeading" data-aos="fade-right">
+          <span>Welcome</span> to R.D. College, Sheikhpura [Bihar]
+        </h2>
+        <div class="AboutCollegeContainer flex-ja" data-aos="fade-down">
+          <article>
+            Ramadhin College, Sheikhpura was established in 1969. It was
+            established by Late Sri. Rajo Singh, a member of Parliament, a
+            visionary, mass leader and the creator of Sheikhpura District, with
+            the help of intellectuals, social activist & common people of
+            Sheikhpura. Sri Rajo Singh was the founder secretary of the college
+            and continued to the post till the conversion of the college into a
+            constituent unit of T. M. Bhagalpur University, Bhagalpur. Ramadhin
+            College was named after the name of Shri Ramadhin Singh, village -
+            Abgil, P.S. - Sheikhpura, who was a man of wisdom, a social thinker
+            and a great affluent farmer. His contribution in the field of
+            knowledge is immense and setup a milestone in education. The college
+            become a constituent unit of T.M. Bhagalpur University, Bhagalpur on
+            12th of December, 1980....
+            <a href="#">Read More</a>
+          </article>
+          <div class="AboutRajoSingh">
+            <img
+              class="ShreeRajoSingh"
+              src="https://www.jagranimages.com/images/newimg/03062022/03_06_2022-rajo_singh_22768974.webp"
+              alt="Rajo Singh"
+            />
+            <a
+              href="https://en-m-wikipedia-org.translate.goog/wiki/Rajo_Singh?_x_tr_sl=en&_x_tr_tl=hi&_x_tr_hl=hi&_x_tr_pto=tc"
+              target="_blank"
+              >Read About Rajo Singh</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!--======================Notice Board=====================-->
+      <section class="NoticeBoard cBlack bcWhite">
+        <h2 class="SectionHeading" data-aos="fade-right">
+          <span>Notice</span> Board
+        </h2>
+        <div class="NoticeBoardContainer flex-ja" data-aos="fade-down">
+          <div class="AdmissionNotice">
+            <h3 class="SubHeadingofNoticeBoard">Admission & Examination</h3>
+            <div class="AdmissionNoticeContainer">
+              <marquee
+                direction="up"
+                behavior="scroll"
+                scrollamount="4"
+                onmouseover="this.stop()"
+                onmouseleave="this.start()"
+              >
+                <ul class="NoticeList cBlack">
+                  <li class="aNotice">
+                    B.A, B.SC & B.Com part-3 (BLOCKING), Last date for admission
+                    14-07-23
+                  </li>
+                  <li class="aNotice">
+                    B.A, B.SC & B.Com part-2 (Pass, Promoted), Last date for
+                    admission 14-07-23
+                  </li>
+                  <li class="aNotice">
+                    Graduation (2020-23) part-3, Exam. start from 25 July &
+                    Result will be published 25 Sept.
+                  </li>
+                  <li class="aNotice">
+                    Graduation (2021-24) part-2, Exam. start from 21 July &
+                    Result will be published 21 Sept.
+                  </li>
+                </ul>
+              </marquee>
+            </div>
+          </div>
+          <div class="ExamNotice">
+            <h3 class="SubHeadingofNoticeBoard">Result</h3>
+            <div class="ResultNoticeContainer">coming soon....</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="GreatMentor bcWhite cBlack">
+        <h2 class="SectionHeading" data-aos="zoom-out">
+          <!--  -->
+          <span>Our</span> Mentors
+          <p>Every great achiever is inspired by a great mentor.</p>
+        </h2>
+        <div class="GreatMentorContainer flex-ja" data-aos="fade-down">
+          <div class="GreatMentorCard">
+            <div class="GreatMentorImageOuter flex-ja">
+              <img
+                class="GreatMentorImage"
+                src="https://rdcollege.ac.in/web/public/user/assets/images/mentors/governor.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="AboutGreatMentor">
+              <h3>Shri Rajendra Arlekar</h3>
+              <p>Hon'ble Governor Bihar</p>
+            </div>
+          </div>
+          <div class="GreatMentorCard">
+            <div class="GreatMentorImageOuter">
+              <img
+                class="GreatMentorImage"
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+            </div>
+            <div class="AboutGreatMentor">
+              <h3>Shri Nitish Kumar</h3>
+              <p>Hon'ble Chief Minister Bihar</p>
+            </div>
+          </div>
+
+          <div class="GreatMentorCard">
+            <div class="GreatMentorImageOuter">
+              <img
+                class="GreatMentorImage"
+                src="https://rdcollege.ac.in/web/public/user/assets/images/mentors/card3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="AboutGreatMentor">
+              <h3>Prof. Shyama Roy</h3>
+              <p>Hon'ble Vice Chancellor, Munger Bihar</p>
+            </div>
+          </div>
+
+          <div class="GreatMentorCard">
+            <div class="GreatMentorImageOuter">
+              <img
+                class="GreatMentorImage"
+                src="https://rdcollege.ac.in/web/public/user/assets/images/mentors/Diwakar-sir.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="AboutGreatMentor">
+              <h3>Dr. Diwakar Kumar</h3>
+              <p>Principal R.D. College, Sheikhpura</p>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </section>
+      <!--======================Student information System=====================-->
+      <section class="SISystem bcWhite">
+        <div class="SISContainer flex-ja">
+          <div class="SISContainerInner">
+            <h2>STUDENT INFORMATION SYSTEM</h2>
+            <p>
+              This section will deal with all the information pertaining to a
+              student such as personal, academic as well as digital documents
+              and student report.
+            </p>
+            <button>SIGN-IN</button>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+    </main>
+
+    <!--====================== =====================-->
+    <section class="FooterSection">
+      <section class="LearningLink bcWhite cBlack">
+        <h2 class="SectionHeading" data-aos="zoom-out">
+          <!--  -->
+          <span>Quick</span> Link
+          <p>
+            Quick link for e-learning platform, it will also try this web to
+            inhance our skills
+          </p>
+        </h2>
+        <div class="LearnLikContainer flex-ja">
+          <a href="https://swayam.gov.in/" target="_blank"
+            ><img
+              src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/swayam_logo.png"
+              alt=""
+          /></a>
+          <a href="https://nptel.ac.in/" target="_blank"
+            ><img src="https://nptel.ac.in/assets/shared/logo-m.jpg" alt=""
+          /></a>
+          <a href="https://www.ugc.gov.in/" target="_blank"
+            ><img src="https://www.ugc.gov.in/images/ugc_logo.png" alt=""
+          /></a>
+          <a href="https://www.swayamprabha.gov.in/" target="_blank"
+            ><img
+              src="https://www.swayamprabha.gov.in/asset/new_team/images/logo/logo.png"
+              alt=""
+          /></a>
+        </div>
+      </section>
+
+      <!--======================Footer=====================-->
+      <footer class="Main-Footer">
+        <div class="footerContainer flex-ja">
+          <div class="ContactUs">
+            <h2 class="FooterHeading"><span>Cont</span>act Us</h2>
+            <ul class="ContactUsContaine">
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                Ramadhin College, Sheikhpura, College
+                <br />
+                More Sheikhpura - 811105 Bihar
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                enquiry@rdcollege.org
+              </li>
+              <li><i class="fa-solid fa-phone"></i> +91-6341-223295</li>
+            </ul>
+          </div>
+
+          <div class="ImportantLink">
+            <h2 class="FooterHeading"><span>Impo</span>rtant Links</h2>
+            <ul class="ImportantLinkContaine">
+              <li>
+                <a href="https://www.mungeruniversity.ac.in/">
+                  <i class="fa-solid fa-link"></i> Munger University, Munger</a
+                >
+              </li>
+              <li>
+                <a href="https://www.ugc.gov.in/">
+                  <i class="fa-solid fa-link"></i> University Grants Commission
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.pmsonline.bih.nic.in/">
+                  <i class="fa-solid fa-link"></i> Post Matric Scholarship,
+                  Bihar
+                </a>
+              </li>
+
+              <li>
+                <a href="https://scholarships.gov.in/">
+                  <i class="fa-solid fa-link"></i> National Scholarship portal
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="Map">
+            <h2 class="FooterHeading"><span>RDC</span> on Map</h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14447.651794426427!2d85.86061544002395!3d25.138633745453014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f241f8485f2bdf%3A0x816ae63ffe629444!2zUi5EIOCkleClieCksuClh-CknA!5e0!3m2!1shi!2sin!4v1689089360438!5m2!1shi!2sin"
+              width="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </footer>
+      <div class="CopyRight">
+        © Copyright 2023 Designed & Developed By | C kumar
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+
+  <!--===================aos js cdn================-->
+  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+  <!-- aos js cdn -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 200,
+      duration: 500,
+      easing: "ease-in-sine",
+      // delay: 100,
+    });
+  </script>
+</html>
