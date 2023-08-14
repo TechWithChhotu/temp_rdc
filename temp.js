@@ -47,24 +47,25 @@ setInterval(sliderSliding, 3000);
 
 //**********************SEND DATA**********************
 //********************************************
-const filterButton = document.getElementById("sendDataButton"); // Replace with the ID of your filter button
+const sendDataButton = document.getElementById("sendDataButton");
 
-filterButton.addEventListener("click", async () => {
-  const dataToSend = "where course=BCA";
+sendDataButton.addEventListener("click", async () => {
+  const dataToSend = "where course=BCA"; // The text data you want to send
+
   try {
-    const response = await fetch("/filter-data", {
-      method: "POST",
+    const response = await fetch("/send-data", {
+      method: "POST", // Use the POST method to send data
       headers: {
-        "Content-Type": "text/plain",
+        "Content-Type": "text/plain", // Set the content type to plain text
       },
-      body: dataToSend,
+      body: dataToSend, // Send the text data in the request body
     });
 
     if (response.ok) {
-      const filteredData = await response.json();
-      console.log("Filtered data:", filteredData);
+      const data = response.json();
+      console.log("Data sent successfully!: ", data);
     } else {
-      console.error("Failed to fetch filtered data:", response.status);
+      console.error("Failed to send data:", response.status);
     }
   } catch (error) {
     console.error("Error:", error);
