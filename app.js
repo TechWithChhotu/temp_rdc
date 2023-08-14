@@ -2,6 +2,11 @@ const express = require("express");
 const mysql = require("mysql2/promise");
 require("dotenv").config();
 let receivedData = "";
+const PASSWORD = "Chhotu@MySql123";
+const HOST_NAME = "localhost";
+const USER = "root";
+const DB_NAME = "university";
+const TABLE_NAME = "rdc";
 
 const app = express();
 const port = 8088;
@@ -9,10 +14,10 @@ let command = `SELECT * FROM ${process.env.TABLE_NAME}`;
 app.get("/connect", async (req, res) => {
   try {
     const connection = await mysql.createConnection({
-      host: process.env.HOST_NAME,
-      user: process.env.USER,
-      password: process.env.PASSWORD,
-      database: process.env.DB_NAME,
+      host: HOST_NAME,
+      user: USER,
+      password: PASSWORD,
+      database: DB_NAME,
     });
     const [rows] = await connection.query(`${command}`);
     connection.end();
